@@ -2,3 +2,9 @@
 *.html linguist-detectable=true
 *.css linguist-detectable=false
 *.json linguist-detectable=false
+* linguist-language=JavaScript
+node_modules/* linguist-vendored
+*.log linguist-generated
+git add .gitattributes
+git commit -m "Adjust language detection"
+git push
