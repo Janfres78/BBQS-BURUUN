@@ -1,0 +1,22 @@
+php
+session_start(); // Start the session
+include 'server/server.php';
+
+if (isset($_POST['mark_done'])) {
+    $ticketId = $_POST['ticket_id'];
+
+    // Update the status to "Done" for the selected ticket
+    $updateStatusQuery = "UPDATE tblticket_logs SET status = 'Done' WHERE id = '$ticketId'";
+    if ($conn->query($updateStatusQuery) === TRUE) {
+        $_SESSION['message'] = "Ticket marked as done!";
+        $_SESSION['success'] = 'success'; // Add success flag
+    } else {
+        $_SESSION['message'] = "Error: " . $conn->error;
+        $_SESSION['success'] = 'danger'; // Add danger flag
+    }
+
+    // Redirect back to the page with the logs table
+    header("Location: view_report.php");
+    exit();
+}
+?>

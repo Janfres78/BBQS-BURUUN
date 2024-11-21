@@ -1,0 +1,4 @@
+bbqs (dbname)
+admin access
+username:admin
+password:admin
