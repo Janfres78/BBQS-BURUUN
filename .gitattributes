@@ -1,4 +1,5 @@
 * linguist-language=JavaScript
+* linguist-language=PHP
 <------------------------->
 *.js linguist-detectable=true
 *.html linguist-detectable=true
